@@ -77,7 +77,14 @@ public class TaskController {
 
         try {
             ProcessBuilder builder = new ProcessBuilder();
-            builder.command("sh", "-c", task.getCommand());
+            builder.redirectErrorStream(true);
+
+            if (System.getProperty("os.name").toLowerCase().contains("win")) {
+                builder.command("cmd.exe", "/c", task.getCommand());
+            } else {
+                builder.command("sh", "-c", task.getCommand());
+            }
+            
             Process process = builder.start();
             
             StringBuilder result = new StringBuilder();

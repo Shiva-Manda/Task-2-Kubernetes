@@ -48,7 +48,7 @@ The API will then be available at `http://localhost:8080`.
 *(Create a new folder named `screenshots` in your project and move all your saved screenshot images into it.)*
 
 **1. Creating a Task (PUT /tasks)**
-![Create Task](screenshots/create_task.png)
+![Create Task](screenshots/create_task1.png)(screenshots/create_task2.png)
 
 **2. Getting All Tasks (GET /tasks)**
 ![Get All Tasks](screenshots/GetAllTasks.png)
