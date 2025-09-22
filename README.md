@@ -45,22 +45,41 @@ The API will then be available at `http://localhost:8080`.
 
 ## Screenshots
 
-*(Create a new folder named `screenshots` in your project and move all your saved screenshot images into it.)*
+### POSTMAN
+
 
 **1. Creating a Task (PUT /tasks)**
-![Create Task](screenshots/create_task1.png)(screenshots/create_task2.png)
+![Create Task](screenshots/postman/create_task1.png)(screenshots/create_task2.png)
 
 **2. Getting All Tasks (GET /tasks)**
-![Get All Tasks](screenshots/GetAllTasks.png)
+![Get All Tasks](screenshots/postman/GetAllTasks.png)
 
 **3. Getting a Single Task (GET /tasks/{id})**
-![Get Single Task](screenshots/GetSingleTask.png)
+![Get Single Task](screenshots/postman/GetSingleTask.png)
 
 **4.Getting a task (findByName)**
-![Search by ID](screenshots/SearchByID.png)
+![Search by ID](screenshots/postman/SearchByID.png)
 
 **5.tasks/{id}/(execute)**
-![Execute](screenshots/Execute.png)
+![Execute](screenshots/postman/Execute.png)
 
 **tasks/{id}(Delete)**
-![Delete](screenshots/Delete.png)
+![Delete](screenshots/postman/Delete.png)
+
+
+### CURL
+
+**1. Creating a Task (PUT /tasks)**
+![Create Task](screenshots/curl/create_task.png)(screenshots/create_task2.png)
+
+**2. Getting All Tasks (GET /tasks)**
+![Get All Tasks](screenshots/curl/GetAllTasks.png)
+
+**3.Getting a task (findByName)**
+![Search by ID](screenshots/curl/SearchByName.png)
+
+**4.tasks/{id}/(execute)**
+![Execute](screenshots/curl/Execute.png)
+
+**5.tasks/{id}(Delete)**
+![Delete](screenshots/curl/Delete.png)
