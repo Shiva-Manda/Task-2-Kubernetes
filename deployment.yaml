@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ 
+  name: kaiburr-task-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+    
+      app: kaiburr-task-app
+  template:
+    metadata:
+      labels:
+       
+        app: kaiburr-task-app
+    spec:
+      containers:
+      - name: kaiburr-task-app-container
+      
+        image: shivamanda/kaiburr-task-app:v4
+        ports:
+        - containerPort: 8080
+        env:
+        - name: MONGO_URI
+          value: "mongodb://mongodb:27017/kaiburr_tasks"

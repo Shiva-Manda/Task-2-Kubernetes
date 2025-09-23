@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kaiburr-task-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: taskapp   
+  template:
+    metadata:
+      labels:
+        app: taskapp   
+    spec:
+      containers:
+        - name: taskapp
+          image: shivamanda/kaiburr-task-app:v7
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATA_MONGODB_URI
+              value: mongodb://mongodb:27017/kaiburr_tasks
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: taskapp-service
+spec:
+  type: NodePort
+  selector:
+    app: taskapp   
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30624
