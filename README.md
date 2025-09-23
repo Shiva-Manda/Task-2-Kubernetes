@@ -74,26 +74,27 @@ Look for the port in the 30000 range (e.g., 8080:3xxxx/TCP). The application API
 
 ### ScreenShots
 
-**Create Task**
+**Create Task**  
 ![Create Task](screenshots/dk_postman/create_task.png)
 
-**Read All Tasks**
+**Read All Tasks**  
 ![Read Tasks](screenshots/dk_postman/Read_All_Tasks.png)
 
-**Read by ID**
+**Read by ID**  
 ![Read by Id](screenshots/dk_postman/Read_by_ID.png)
 
-**Update Task**
-![update](screenshots/dk_postman/Update_Task.png)
+**Update Task**  
+![Update](screenshots/dk_postman/Update_Task.png)
 
-**Delete Task**
+**Delete Task**  
 ![Delete](screenshots/dk_postman/Delete_Task.png)
 
-**Execute Task**
+**Execute Task**  
 ![Execute](screenshots/dk_postman/Execute_Task.png)
 
-**Temperoray Pod**
+**Temporary Pod**  
 ![Temporary](screenshots/dk_postman/Temp_Pod.png)
+
 
 ==================================================================================================================================================
 
