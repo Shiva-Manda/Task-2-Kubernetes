@@ -17,7 +17,7 @@ Before you begin, ensure you have the following installed:
 
 Here are the steps to build and deploy the entire application stack to your local Kubernetes cluster.
 
-### 1. Build and Push the Docker Image
+## 1. Build and Push the Docker Image
 First, build the Java application and then build and push the Docker image to a public registry like Docker Hub.
 
 # Navigate to the Java project's root directory
@@ -34,14 +34,14 @@ docker login
 # Push the image to Docker Hub
 docker push your-dockerhub-username/kaiburr-task-app:latest
 
-### Deploy MongoDB
+## Deploy MongoDB
 # Add the Bitnami repository
 helm repo add bitnami [https://charts.bitnami.com/bitnami](https://charts.bitnami.com/bitnami)
 
 # Install MongoDB
 helm install mongodb bitnami/mongodb --set auth.enabled=false --set persistence.enabled=true
 
-### Deploy the Application
+## Deploy the Application
 
 # Apply the permissions for the application to create pods
 kubectl apply -f role.yaml
@@ -50,11 +50,11 @@ kubectl apply -f role-binding.yaml
 # Apply the app-deployment 
 kubectl apply -f app-deployment.yam
 
-### Access the Application
+## Access the Application
 kubectl get service kaiburr-task-app-service
 Look for the port in the 30000 range (e.g., 8080:3xxxx/TCP). The application API will be available at http://localhost:3xxxx/tasks.
 
-### API Endpoints
+## API Endpoints
 
 | Operation  | Method | Endpoint                    | Description                                       |
 |------------|--------|-----------------------------|---------------------------------------------------|
@@ -66,12 +66,12 @@ Look for the port in the 30000 range (e.g., 8080:3xxxx/TCP). The application API
 | **Execute** | `POST` | `/tasks/{id}/execute`      | Runs the command for a specific task in a new pod.|
 
 
-### Demo Video
+## Demo Video
 Watch the demo video here: [Demo Video](https://drive.google.com/file/d/13q9KY-LN0mhZe18JysmYZdZxeqfs_pER/view?usp=sharing)
 
 
 
-### ScreenShots
+## ScreenShots
 
 **Create Task**  
 ![Create Task](screenshots/dk_postman/create_task.png)
