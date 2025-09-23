@@ -20,7 +20,6 @@ Here are the steps to build and deploy the entire application stack to your loca
 ### 1. Build and Push the Docker Image
 First, build the Java application and then build and push the Docker image to a public registry like Docker Hub.
 
-```bash
 # Navigate to the Java project's root directory
 
 # Build the JAR file
@@ -68,7 +67,7 @@ Look for the port in the 30000 range (e.g., 8080:3xxxx/TCP). The application API
 
 
 ### Demo Video
-Watch the demo video here: [Demo Video](https://drive.google.com/file/d/1B05D9X9v5uhqIr0iT1W1QBZgn0TRILCe/view?usp=sharing)
+Watch the demo video here: [Demo Video](https://drive.google.com/file/d/13q9KY-LN0mhZe18JysmYZdZxeqfs_pER/view?usp=sharing)
 
 
 
@@ -76,7 +75,6 @@ Watch the demo video here: [Demo Video](https://drive.google.com/file/d/1B05D9X9
 
 **Create Task**  
 ![Create Task](screenshots/dk_postman/create_task.png)
-
 
 **Read All Tasks**  
 ![Read Tasks](screenshots/dk_postman/Read_All_Tasks.png)
@@ -95,6 +93,7 @@ Watch the demo video here: [Demo Video](https://drive.google.com/file/d/1B05D9X9
 
 **Temporary Pod**  
 ![Temporary](screenshots/dk_postman/Temp_Pod.png)
+
 
 
 ==================================================================================================================================================
