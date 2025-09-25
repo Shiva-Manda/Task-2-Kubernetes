@@ -33,9 +33,12 @@ docker login
 # Push the image to Docker Hub
 docker push your-dockerhub-username/kaiburr-task-app:latest
 
-# Deploy MongoDB
+## Deploy MongoDB
 # Add the Bitnami repository
 helm repo add bitnami [https://charts.bitnami.com/bitnami](https://charts.bitnami.com/bitnami)
+
+# Update the Helm repository
+helm repo update
 
 # Install MongoDB
 helm install mongodb bitnami/mongodb --set auth.enabled=false --set persistence.enabled=true
@@ -46,8 +49,9 @@ helm install mongodb bitnami/mongodb --set auth.enabled=false --set persistence.
 kubectl apply -f role.yaml
 kubectl apply -f role-binding.yaml
 
-# Apply the app-deployment 
-kubectl apply -f app-deployment.yam
+# Apply the deployment 
+kubectl apply -f app-deployment.yaml
+kubectl apply -f service.yaml
 
 # Access the Application
 kubectl get service kaiburr-task-app-service
@@ -72,7 +76,39 @@ Watch the demo video here: [Demo Video](https://drive.google.com/file/d/13q9KY-L
 
 # ScreenShots
 
+**Services**
+
+*The output showing your taskapp-service and its assigned NodePort*
+![Services](screenshots/dk_postman/AllServices.png)
+
+**Pods**
+
+*The output showing both your kaiburr-task-app-deployment-... pod and your mongodb-... pod in the Running state*
+![Pods](screenshots/dk_postman/RunningPods.png)
+
+**Deployments**
+![Deployment](screenshots/dk_postman/Deployments.png)
+
+**Storage**
+
+*The output showing the mongodb Persistent Volume Claim with a STATUS of Bound*
+![PVC](screenshots/dk_postman/PVC.png)
+
+**RBAC**
+![Permissions](screenshots/dk_postman/PermissionsRole.png)
+
+![Permissions](screenshots/dk_postman/PermissionsRoleBinding.png)
+
+**Curl**
+*A curl  request showing the JSON data being sent to create a task and the successful 201 Created response*
+![Insert](screenshots/dk_postman/curlInsert.png)
+
+**Temporary Pod**
+*A screenshot of your terminal watching the pods (kubectl get pods -w) at the exact moment you execute a task from another terminal*
+![Pod Creation](screenshots/dk_postman/Execute_Pod_Creation.png)
+
 **Create Task**  
+
 ![Create Task](screenshots/dk_postman/create_task.png)
 
 **Read All Tasks**  
