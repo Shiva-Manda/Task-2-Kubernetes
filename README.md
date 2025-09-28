@@ -74,6 +74,11 @@ kubectl apply -f service.yaml
 kubectl get service kaiburr-task-app-service
 ```
 
+# Start the application
+```bash
+kubectl rollout restart deployment kaiburr-task-app-deployment
+```
+
 # Look for the port in the 30000 range (e.g., 8080:3xxxx/TCP).
 The application API will be available at:
 http://localhost:3xxxx/tasks
