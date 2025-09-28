@@ -21,40 +21,58 @@ Here are the steps to build and deploy the entire application stack to your loca
 
 First, build the Java application and then build and push the Docker image to a public registry like Docker Hub.  
 
-```bash
+
 # Navigate to the Java project's root directory
 
 # Build the JAR file
+```bash
 mvn clean install
+```
 
 # Build the Docker image (replace 'your-dockerhub-username')
+```bash
 docker build -t your-dockerhub-username/kaiburr-task-app:latest .
+```
 
 # Log in to Docker Hub
 docker login
 
 # Push the image to Docker Hub
+```bash
 docker push your-dockerhub-username/kaiburr-task-app:latest
+```
 
 # Add the Bitnami repository
+```bash
 helm repo add bitnami https://charts.bitnami.com/bitnami
+```
 
 # Update the Helm repository
+```bash
 helm repo update
+```
 
 # Install MongoDB
+```bash
 helm install mongodb bitnami/mongodb --set auth.enabled=false --set persistence.enabled=true
+```
 
 # Apply the permissions for the application to create pods
+```bash
 kubectl apply -f role.yaml
 kubectl apply -f role-binding.yaml
+```
 
 # Apply the deployment 
+```bash
 kubectl apply -f app-deployment.yaml
 kubectl apply -f service.yaml
+```
 
 # Access the Application
+```bash
 kubectl get service kaiburr-task-app-service
+```
 
 # Look for the port in the 30000 range (e.g., 8080:3xxxx/TCP).
 The application API will be available at:
